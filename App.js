@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextInput, View, Picker, Button, Text, Alert } from 'react-native';
+import { TextInput, View, Picker, Button, Text, Alert ,ProgressBarAndroid } from 'react-native';
 
 export default class App extends Component {
   constructor(props) {
@@ -28,7 +28,16 @@ export default class App extends Component {
       };
 
       fetch('http://192.168.0.117:8000/formData', options).then((res) => {
-        Alert.alert("Response Came");
+        if (res.status == 200) {
+           Alert.alert("User Successfully Registered");
+
+        } else {
+          Alert.alert("This Email is associatited with another account");
+
+        }
+
+
+
       }).catch(function (error) {
         console.log('There has been a problem with your fetch operation: ' + error.message);
         throw error;
