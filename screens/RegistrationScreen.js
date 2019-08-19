@@ -87,7 +87,7 @@ class RegistrationScreen extends Component {
                 </Picker>
                 <Button
                     onPress={_onPressSubmit}
-                    title="Submit"
+                    title="Register Now"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
                 />
